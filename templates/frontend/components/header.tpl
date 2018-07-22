@@ -37,7 +37,7 @@
 		</nav>
 
 		{* Header *}
-		<header class="navbar navbar-default" id="headerNavigationContainer" role="banner">
+		<header class="navbar navbar-default navbar-fixed-top" id="headerNavigationContainer" role="banner">
 
 			{* User profile, login, etc, navigation menu*}
 			<div class="container-fluid">

@@ -41,4 +41,5 @@
 	<message key="plugins.themes.bootstrap3.options.bootstrapTheme.superhero">Superhero</message>
 	<message key="plugins.themes.bootstrap3.options.bootstrapTheme.united">United</message>
 	<message key="plugins.themes.bootstrap3.options.bootstrapTheme.yeti">Yeti</message>
+	<message key="plugins.themes.bootstrap3.options.bootstrapTheme.terradigitalis">TerraDigitalis</message>
 </locale>
