@@ -2,6 +2,14 @@
 // Bootswatch
 // -----------------------------------------------------
 
+//@web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic";
+@web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:400,600|Merriweather+Sans|Tenor+Sans";
+
+.web-font(@path) {
+  @import url("@{path}");
+}
+.web-font(@web-font-path);
+
 // Container paddings
 
 .pkp_structure_content.container {
@@ -20,7 +28,7 @@ footer[role="contentinfo"] {
     margin-top: 4em;
 }
 
-// Style the galleys buttons 
+// Style the galleys buttons
 
 .btn-group a {
 	background-color: #C86243;
