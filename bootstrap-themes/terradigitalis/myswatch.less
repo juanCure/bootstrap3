@@ -30,15 +30,13 @@ footer[role="contentinfo"] {
 
 // Style the galleys buttons
 
-.btn-group a {
-	background-color: #C86243;
-	border-color: #a1300d;
-}
+.galley-link.btn.btn-primary{
+	background-color: #C86243 !important;
+	border-color: #a1300d !important;
 
-.btn-group a:hover {
-	background-color: #c3512f;
-	opacity: 0.9;
-	border-color: #a1300d;
+	&:hover {
+		opacity: 0.9;
+	}
 }
 
 .footer a {
@@ -48,4 +46,58 @@ footer[role="contentinfo"] {
 .footer a:hover {
 	color: #C86243;
 	font-weight: bold;
+}
+
+// Font-Sizes for navbar elements in the header
+
+.navbar #nav-menu ul > li {
+	font-size: 14px;
+}
+
+// Styling the content
+
+.media-list .media-heading a {
+	color: @media-list-link-color;
+	font-size: 16px;
+
+	&:hover {
+		color: @media-list-link-hover-color;
+	}
+}
+
+.issue-toc .page-header h2 small {
+	color: #734b34 !important;
+	font-family: 'Merriweather Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 30px;
+	font-weight: 400;
+}
+
+// Styling the div's of right sidebar
+
+#sidebar .pkp_block .title {
+	color: #fff;
+	background-color: #a68776;
+}
+
+#sidebar .pkp_block .content ul > li > a {
+	color: #c3512f;
+
+	&:hover {
+		color: #c3512f;
+	}
+}
+
+// Styling the read-more button
+
+#main-content .current_issue .read-more {
+	color: fff;
+	border-color: #a1300d;
+	border-radius: 100px;
+	background-color: #c3512f;
+	padding: 15px 30px 13px;
+	font-size: 13px;
+
+	&:hover {
+		opacity: 0.9;
+	}
 }
