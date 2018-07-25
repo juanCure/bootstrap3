@@ -97,7 +97,24 @@ footer[role="contentinfo"] {
 	padding: 15px 30px 13px;
 	font-size: 13px;
 
+	// Aqui estamos aplicando un estilo a un elemento anidado 
+	// en el botón .read-more
+	.glyphicon.glyphicon-chevron-right {
+		width: 0px;
+		overflow: hidden;
+		opacity: 0;
+	}
+
+	// Aquí estamos aplicando un estilo para el evento hover sobre
+	// el botón con clase read-more
 	&:hover {
 		opacity: 0.9;
+
+		// Aquí estamos aplicando estilos para un elemento anidado en 
+		// el botón read-more pero cuando éste tiene el evento hover 
+		.glyphicon.glyphicon-chevron-right {
+			width: 1.5em;
+			opacity: 1;
+		}
 	}
 }
