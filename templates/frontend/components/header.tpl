@@ -97,8 +97,6 @@
 
 				{* Primary site navigation *}
 				<nav id="nav-menu" class="navbar-collapse collapse" aria-label="{translate|escape key="common.navigation.site"}">
-					{* Primary navigation menu for current application *}
-					{load_menu name="primary" id="main-navigation" ulClass="nav navbar-nav"}
 
 					{* Search form *}
 					{if !$noContextsConfigured}
@@ -106,6 +104,10 @@
 							{include file="frontend/components/searchForm_simple.tpl"}
 						</div>
 					{/if}
+					{* Agregando el ISSN *}
+					<div id="my_issn" class="pull-md-right"><span>ISSN: 2594-0694</span></div>
+					{* Primary navigation menu for current application *}
+					{load_menu name="primary" id="main-navigation" ulClass="nav navbar-nav pull-md-right"}
 				</nav>
 
 			</div><!-- .pkp_head_wrapper -->

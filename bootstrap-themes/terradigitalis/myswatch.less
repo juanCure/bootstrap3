@@ -10,15 +10,41 @@
 }
 .web-font(@web-font-path);
 
-// Container paddings
+//== Header
+//
+//##
 
-.pkp_structure_content.container {
-	padding-top: 160px;
+@media (min-width: 768px) {
+	.navbar > .container-fluid .navbar-header .navbar-brand {
+		margin-top: -20px;
+		margin-left: 50px;
+	}
+}
+
+#nav-menu > #my_issn span {
+	color: @navbar-default-color;
+	display: block;
+	margin-top: 20px;
+}
+
+#nav-menu {
+	font-weight: 600;
 }
 
 .navbar {
 	min-height: 120px !important;
 }
+
+// Font-Sizes for navbar elements in the header
+
+.navbar #nav-menu ul > li {
+	font-size: 14px;
+}
+
+
+//== Footer
+//
+//##
 
 // Style the footer
 footer[role="contentinfo"] {
@@ -27,6 +53,26 @@ footer[role="contentinfo"] {
     padding: 2em;
     margin-top: 4em;
 }
+
+.footer a {
+	color: #7b7368;
+}
+
+.footer a:hover {
+	color: #C86243;
+	font-weight: bold;
+}
+
+//== Content
+//
+//##
+
+// Container paddings
+
+.pkp_structure_content.container {
+	padding-top: 160px;
+}
+
 
 // Style the galleys buttons
 
@@ -39,22 +85,7 @@ footer[role="contentinfo"] {
 	}
 }
 
-.footer a {
-	color: #7b7368;
-}
-
-.footer a:hover {
-	color: #C86243;
-	font-weight: bold;
-}
-
-// Font-Sizes for navbar elements in the header
-
-.navbar #nav-menu ul > li {
-	font-size: 14px;
-}
-
-// Styling the content
+// Styling the links within content
 
 .media-list .media-heading a {
 	color: @media-list-link-color;
@@ -97,7 +128,7 @@ footer[role="contentinfo"] {
 	padding: 15px 30px 13px;
 	font-size: 13px;
 
-	// Aqui estamos aplicando un estilo a un elemento anidado 
+	// Aqui estamos aplicando un estilo a un elemento anidado
 	// en el botón .read-more
 	.glyphicon.glyphicon-chevron-right {
 		width: 0px;
@@ -110,8 +141,8 @@ footer[role="contentinfo"] {
 	&:hover {
 		opacity: 0.9;
 
-		// Aquí estamos aplicando estilos para un elemento anidado en 
-		// el botón read-more pero cuando éste tiene el evento hover 
+		// Aquí estamos aplicando estilos para un elemento anidado en
+		// el botón read-more pero cuando éste tiene el evento hover
 		.glyphicon.glyphicon-chevron-right {
 			width: 1.5em;
 			opacity: 1;
