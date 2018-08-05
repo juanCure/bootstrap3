@@ -38,7 +38,7 @@
 
 				<div class="col-md-2" role="complementary">
 					<a href="{$pkpLink}">
-						<img class="img-responsive" alt="{translate key="common.publicKnowledgeProject"}" src="{$baseUrl}/{$brandImage}">
+						<img class="img-responsive" alt="{translate key="common.publicKnowledgeProject"}" src="{$baseUrl}/plugins/themes/bootstrap3/images/my_ojs_brand.png">
 					</a>
 				</div>
 
