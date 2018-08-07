@@ -12,7 +12,6 @@
  * @uses ulClass string Class name(s) to assign the outer <ul>
  * @uses liClass string Class name(s) to assign all <li> elements
  *}
-
 {if $navigationMenu}
 	<ul id="{$id|escape}" class="{$ulClass|escape}">
 		{foreach key=field item=navigationMenuItemAssignment from=$navigationMenu->menuTree}
@@ -25,7 +24,9 @@
 			{/if}
 			<li class="{$liClass|escape}{if $hasChildren} dropdown{/if}">
 				<a href="{$navigationMenuItemAssignment->navigationMenuItem->getUrl()}"{if $hasChildren} class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"{/if}>
-					{$navigationMenuItemAssignment->navigationMenuItem->getLocalizedTitle()}
+					<span class="menu-text">
+						{$navigationMenuItemAssignment->navigationMenuItem->getLocalizedTitle()}
+					</span>
 					{if $hasChildren}
 						<span class="caret"></span>
 					{/if}
