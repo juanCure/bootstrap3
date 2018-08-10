@@ -59,12 +59,12 @@
 		{if !$hideGalleys && $article->getGalleys()}
 			<div class="btn-group" role="group">
 				{foreach from=$article->getGalleys() item=galley}
-					{if $primaryGenreIds}
+					{*{if $primaryGenreIds}
 						{assign var="file" value=$galley->getFile()}
 						{if !$file || !in_array($file->getGenreId(), $primaryGenreIds)}
 							{php}continue;{/php}
 						{/if}
-					{/if}
+					{/if}*}
 					{assign var="hasArticleAccess" value=$hasAccess}
 					{if ($article->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN)}
 						{assign var="hasArticleAccess" value=1}
