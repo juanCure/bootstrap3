@@ -63,8 +63,24 @@
 		</span>
 	{/if}
 
-	{$galley->getGalleyLabel()|escape}
-
+	{* Agregando internacionalizacion a las galeras *}
+	{assign var="galleyLabel" value=$galley->getLabel()|escape}
+	{if $galleyLabel == 'staticMap'}
+		{translate key="plugins.themes.bootstrap3.galleyButtons.staticMap"}
+	{elseif $galleyLabel == 'interactiveMap'}
+		{translate key="plugins.themes.bootstrap3.galleyButtons.interactiveMap"}
+	{elseif $galleyLabel == '3DMap'}
+		{translate key="plugins.themes.bootstrap3.galleyButtons.3DMap"}
+	{elseif $galleyLabel == 'supplementary'}
+		{translate key="plugins.themes.bootstrap3.galleyButtons.supplementary"}
+	{else}
+		{assign var=galleyLabel value=$galley->getGalleyLabel()|escape}
+		{if $galley->getLocale() == "es_ES"}
+			{$galleyLabel|replace:'Español (España)':'Español'}
+		{else}
+			{$galley->getGalleyLabel()|escape}
+		{/if}
+	{/if}
 	{if $restricted && $purchaseFee && $purchaseCurrency}
 		<span class="purchase-cost">
 			{translate key="reader.purchasePrice" price=$purchaseFee currency=$purchaseCurrency}

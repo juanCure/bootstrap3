@@ -42,4 +42,9 @@
 	<message key="plugins.themes.bootstrap3.options.bootstrapTheme.united">United</message>
 	<message key="plugins.themes.bootstrap3.options.bootstrapTheme.yeti">Yeti</message>
 	<message key="plugins.themes.bootstrap3.options.bootstrapTheme.terradigitalis">TerraDigitalis</message>
+	<!-- Tags for galley buttos-->
+	<message key="plugins.themes.bootstrap3.galleyButtons.staticMap">Mapa estático</message>
+	<message key="plugins.themes.bootstrap3.galleyButtons.interactiveMap">Mapa interactivo</message>
+	<message key="plugins.themes.bootstrap3.galleyButtons.3DMap">Mapa interactivo 3D</message>
+	<message key="plugins.themes.bootstrap3.galleyButtons.supplementary">Material supplementario</message>
 </locale>
