@@ -70,6 +70,7 @@ class BootstrapThreeThemePlugin extends ThemePlugin {
 		if (Config::getVar('general', 'enable_cdn')) {
 			$jquery = '//ajax.googleapis.com/ajax/libs/jquery/' . CDN_JQUERY_VERSION . '/jquery' . $min . '.js';
 			$jqueryUI = '//ajax.googleapis.com/ajax/libs/jqueryui/' . CDN_JQUERY_UI_VERSION . '/jquery-ui' . $min . '.js';
+			$fontAwesome = '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
 		} else {
 			// Use OJS's built-in jQuery files
 			$jquery = $request->getBaseUrl() . '/lib/pkp/lib/vendor/components/jquery/jquery' . $min . '.js';
@@ -86,6 +87,9 @@ class BootstrapThreeThemePlugin extends ThemePlugin {
 
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
+
+		// Adding the font-awesome from a CDN
+		$this->addStyle('fontAwesome', $fontAwesome, array('baseUrl' => ''));
 	}
 
 	/**

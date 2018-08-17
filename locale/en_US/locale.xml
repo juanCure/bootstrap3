@@ -45,6 +45,7 @@
 	<!-- Tags for galley buttos-->
 	<message key="plugins.themes.bootstrap3.galleyButtons.staticMap">Static map</message>
 	<message key="plugins.themes.bootstrap3.galleyButtons.interactiveMap">Interactive map</message>
+	<message key="plugins.themes.bootstrap3.galleyButtons.dynamicMap">Dynamic map</message>
 	<message key="plugins.themes.bootstrap3.galleyButtons.3DMap">3D Interactive map</message>
 	<message key="plugins.themes.bootstrap3.galleyButtons.supplementary">Supplementary material</message>
 </locale>

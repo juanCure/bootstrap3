@@ -27,7 +27,14 @@
 {if $galley->isPdfGalley()}
 	{assign var="type" value="pdf"}
 {else}
-	{assign var="type" value="file"}
+	{assign var="galleyLabel" value=$galley->getLabel()|escape}
+	{if $galleyLabel == 'staticMap' || $galleyLabel == 'interactiveMap' || $galleyLabel == '3DMap' || $galleyLabel == 'dynamicMap'}
+		{assign var="type" value="map"}
+	{elseif $galleyLabel == 'HTML'}
+		{assign var="type" value="html"}
+	{else}
+		{assign var="type" value="file"}
+	{/if}
 {/if}
 
 {* Get page and parentId for URL *}
@@ -51,6 +58,7 @@
 {* Don't be frightened. This is just a link *}
 <a class="galley-link btn btn-primary {$type}" role="button" href="{url page=$page op="view" path=$parentId|to_array:$galley->getBestGalleyId($currentJournal)}">
 
+
 	{* Add some screen reader text to indicate if a galley is restricted *}
 	{if $restricted}
 		<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
@@ -65,14 +73,8 @@
 
 	{* Agregando internacionalizacion a las galeras *}
 	{assign var="galleyLabel" value=$galley->getLabel()|escape}
-	{if $galleyLabel == 'staticMap'}
-		{translate key="plugins.themes.bootstrap3.galleyButtons.staticMap"}
-	{elseif $galleyLabel == 'interactiveMap'}
-		{translate key="plugins.themes.bootstrap3.galleyButtons.interactiveMap"}
-	{elseif $galleyLabel == '3DMap'}
-		{translate key="plugins.themes.bootstrap3.galleyButtons.3DMap"}
-	{elseif $galleyLabel == 'supplementary'}
-		{translate key="plugins.themes.bootstrap3.galleyButtons.supplementary"}
+	{if $galleyLabel == 'staticMap' || $galleyLabel == 'interactiveMap' || $galleyLabel == '3DMap' || $galleyLabel == 'supplementary' || $galleyLabel == 'dynamicMap' }
+		{translate key="plugins.themes.bootstrap3.galleyButtons."|cat:"$galleyLabel"}
 	{else}
 		{assign var=galleyLabel value=$galley->getGalleyLabel()|escape}
 		{if $galley->getLocale() == "es_ES"}

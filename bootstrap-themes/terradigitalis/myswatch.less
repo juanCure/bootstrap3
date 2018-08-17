@@ -110,6 +110,42 @@ div[role="complementary"] img{
 	}
 }
 
+.galley-link.file:before {
+	display: inline-block;
+	font: normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	content: "\f0f6";
+	margin-right: 0.25em;
+}
+
+.galley-link.pdf:before {
+	display: inline-block;
+	font: normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	content: "\f1c1";
+	margin-right: 0.25em;
+}
+
+.galley-link.map:before {
+	display: inline-block;
+	font: normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	content: "\f278";
+	margin-right: 0.25em;
+}
+
+.galley-link.html:before {
+	display: inline-block;
+	font: normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	content: "\f13b";
+	margin-right: 0.25em;
+}
+
 // Styling the links within content
 
 .media-list .media-heading a {
@@ -171,6 +207,60 @@ a{
 		.glyphicon.glyphicon-chevron-right {
 			width: 1.5em;
 			opacity: 1;
+		}
+	}
+}
+
+// Styling the article_details view
+
+.article-details {
+	color: #382410;
+
+	.page-header {
+		font-size: 50px;
+		font-weight: 300;
+	}
+
+	.article-main .authors .article-author-affilitation,
+	.article-main .article-summary .article-abstract,
+	.article-main .item.downloads_chart {
+		color: #7c6853;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 26px;
+	}
+
+	.article-main .authors strong {
+		font-size: 16px;
+	}
+
+	// Styling the article-more-detail boxes
+
+	.article-more-details .panel .panel-heading {
+		color: #fff;
+		background-color: #a68776;
+	}
+
+	.article-more-details .panel.section .panel-body {
+		color: #c3512f;
+		font-weight: 700;
+	}
+}
+
+// Styling the issue_toc view
+
+#main-content {
+	color: #7c6853;
+	font-size: 16px;
+	line-height: 26px;
+
+	.issue-toc .section .media-list .media-heading a {
+		color: #c3512f;
+		font-size: 20px;
+		line-height: 26px !important;
+
+		&:hover {
+			font-weight: 700;
 		}
 	}
 }
