@@ -86,6 +86,9 @@ class BootstrapThreeThemePlugin extends ThemePlugin {
 
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
+
+		// Adding the daniel_haro.js script
+		$this->addScript('daniel_haro', $request->getBaseUrl() . '/public/journals/5/daniel_haro.js', array('baseUrl' => ''));
 	}
 
 	/**
