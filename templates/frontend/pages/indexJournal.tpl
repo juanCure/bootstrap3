@@ -55,6 +55,13 @@
 		</section>
 	{/if}
 
+	{* Additional Homepage Content *}
+	{if $additionalHomeContent}
+		<section class="additional_content">
+			{$additionalHomeContent}
+		</section>
+	{/if}
+
 
 	{* Latest issue *}
 	{if $issue}
@@ -73,14 +80,7 @@
 				<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
 		</section>
-	{/if}
-
-	{* Additional Homepage Content *}
-	{if $additionalHomeContent}
-		<section class="additional_content">
-			{$additionalHomeContent}
-		</section>
-	{/if}
+	{/if}	
 </div><!-- .page -->
 
 {include file="frontend/components/footer.tpl"}
