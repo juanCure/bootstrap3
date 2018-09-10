@@ -41,4 +41,7 @@
 	<message key="plugins.themes.bootstrap3.options.bootstrapTheme.superhero">Superhero</message>
 	<message key="plugins.themes.bootstrap3.options.bootstrapTheme.united">United</message>
 	<message key="plugins.themes.bootstrap3.options.bootstrapTheme.yeti">Yeti</message>
+	<message key="plugins.themes.bootstrap3.navigation.current">Current issue</message>
+	<message key="plugins.themes.bootstrap3.navigation.archives">Previous issues</message>
+	<message key="plugins.themes.bootstrap3.navigation.advance.online">Advance online</message>
 </locale>

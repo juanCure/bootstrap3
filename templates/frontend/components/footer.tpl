@@ -17,11 +17,28 @@
 	{* Sidebars *}
 	{if empty($isFullWidth)}
 		{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
-		{if $sidebarCode}
-			<aside id="sidebar" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-4" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
+		
+		<aside id="sidebar" class="pkp_structure_sidebar left col-xs-12 col-sm-2 col-md-4" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
+			{* Agregando los botones Número actual, Números anteriores y Avance en línea*}
+			<div class="pkp_block">
+				<div id="numero_actual" class="botones_derecha">
+					<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="current"}">
+						{translate key="plugins.themes.bootstrap3.navigation.current"}
+					</a>
+				</div>
+				<div id="numeros_anteriores" class="botones_derecha">
+					<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}">
+						{translate key="plugins.themes.bootstrap3.navigation.archives"}
+					</a>
+				</div>
+				<div id="avance_linea" class="botones_derecha">
+					<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="current"}">{translate key="plugins.themes.bootstrap3.navigation.advance.online"}</a>
+				</div>
+			</div>
+			{if $sidebarCode}
 				{$sidebarCode}
-			</aside><!-- pkp_sidebar.left -->
-		{/if}
+			{/if}
+		</aside><!-- pkp_sidebar.left -->
 	{/if}
 	</div><!-- pkp_structure_content -->
 
