@@ -222,30 +222,6 @@
 					</div>
 				{/if}
 
-				{* Issue article appears in *}
-				<div class="panel panel-default issue">
-					<div class="panel-heading">
-						{translate key="issue.issue"}
-					</div>
-					<div class="panel-body">
-						<a class="title" href="{url page="issue" op="view" path=$issue->getBestIssueId($currentJournal)}">
-							{$issue->getIssueIdentification()}
-						</a>
-
-					</div>
-				</div>
-
-				{if $section}
-					<div class="panel panel-default section">
-						<div class="panel-heading">
-							{translate key="section.section"}
-						</div>
-						<div class="panel-body">
-							{$section->getLocalizedTitle()|escape}
-						</div>
-					</div>
-				{/if}
-
 				{* Licensing info *}
 				{if $copyright || $licenseUrl}
 					<div class="panel panel-default copyright">
