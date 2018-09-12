@@ -11,7 +11,6 @@
  *       represents a page-level override, and doesn't indicate whether or not
  *       sidebars have been configured for thesite.
  *}
-
 	</main>
 
 	{* Sidebars *}
@@ -32,7 +31,15 @@
 					</a>
 				</div>
 				<div id="avance_linea" class="botones_derecha">
-					<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="current"}">{translate key="plugins.themes.bootstrap3.navigation.advance.online"}</a>
+					{if $theMostRecentUnpublishedIssueId != 0}
+						<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="view" path=$theMostRecentUnpublishedIssueId}">
+							{translate key="plugins.themes.bootstrap3.navigation.advance.online"}
+						</a>
+					{else}
+						<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="current"}">
+							{translate key="plugins.themes.bootstrap3.navigation.advance.online"}
+						</a>
+					{/if}
 				</div>
 			</div>
 			{if $sidebarCode}

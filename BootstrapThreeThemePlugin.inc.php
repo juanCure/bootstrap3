@@ -89,6 +89,8 @@ class BootstrapThreeThemePlugin extends ThemePlugin {
 
 		// Adding the daniel_haro.js script
 		$this->addScript('daniel_haro', $request->getBaseUrl() . '/public/journals/5/daniel_haro.js', array('baseUrl' => ''));
+
+		HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 	}
 
 	/**
@@ -106,4 +108,25 @@ class BootstrapThreeThemePlugin extends ThemePlugin {
 	function getDescription() {
 		return __('plugins.themes.bootstrap3.description');
 	}
+
+	/**
+	 * Fired when the 'TemplateManager::display' hook is called
+	 * @param string $hookname
+	 * @param array $args [$templateMgr, $template, $sendContentType, $charset, $output]
+	 */
+	public function loadTemplateData($hookname, $args) {
+		$templateMgr = $args[0];
+		$request = Application::getRequest();
+		$journal = $request->getJournal();
+		$issueDao = DAORegistry::getDAO('IssueDAO');
+		$unPublishedIssues = $issueDao->getUnpublishedIssues($journal->getId());
+		$theMostRecentUnpublishedIssueId = 0;
+		if(!$unPublishedIssues->wasEmpty()){
+			error_log(print_r("I am within conditional", TRUE));
+			$unPublishedIssuesArray = $unPublishedIssues->toArray();
+			$theMostRecentUnpublishedIssue = $unPublishedIssuesArray[0];
+			$theMostRecentUnpublishedIssueId = $theMostRecentUnpublishedIssue->getBestIssueId();			
+		}
+		$templateMgr-> assign('theMostRecentUnpublishedIssueId', $theMostRecentUnpublishedIssueId);
+	}	
 }
