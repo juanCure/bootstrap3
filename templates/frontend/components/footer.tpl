@@ -31,6 +31,12 @@
 					</a>
 				</div>
 				<div id="avance_linea" class="botones_derecha">
+					<a href="{url router=$smarty.const.ROUTE_PAGE page="forthcoming" op="view"}">
+						{translate key="plugins.themes.bootstrap3.navigation.advance.online"}
+					</a>
+				</div>
+				{*
+				<div id="avance_linea" class="botones_derecha">
 					{if $theMostRecentUnpublishedIssueId != 0}
 						<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="view" path=$theMostRecentUnpublishedIssueId}">
 							{translate key="plugins.themes.bootstrap3.navigation.advance.online"}
@@ -40,7 +46,7 @@
 							{translate key="plugins.themes.bootstrap3.navigation.advance.online"}
 						</a>
 					{/if}
-				</div>
+				</div>*}
 			</div>
 			{if $sidebarCode}
 				{$sidebarCode}
