@@ -122,7 +122,6 @@ class BootstrapThreeThemePlugin extends ThemePlugin {
 		$unPublishedIssues = $issueDao->getUnpublishedIssues($journal->getId());
 		$theMostRecentUnpublishedIssueId = 0;
 		if(!$unPublishedIssues->wasEmpty()){
-			error_log(print_r("I am within conditional", TRUE));
 			$unPublishedIssuesArray = $unPublishedIssues->toArray();
 			$theMostRecentUnpublishedIssue = $unPublishedIssuesArray[0];
 			$theMostRecentUnpublishedIssueId = $theMostRecentUnpublishedIssue->getBestIssueId();			

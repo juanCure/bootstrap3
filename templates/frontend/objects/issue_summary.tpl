@@ -12,7 +12,9 @@
 <div class="issue-summary media">
 
 	{* Retrieve separate entries for $issueTitle and $issueSeries *}
-	{assign var=issueTitle value=$issue->getLocalizedTitle()}
+	{if $issue->getShowTitle()}
+		{assign var=issueTitle value=$issue->getLocalizedTitle()}
+	{/if}
 	{assign var=issueSeries value=$issue->getIssueSeries()}
 
 	{* Show cover image and use cover description *}
